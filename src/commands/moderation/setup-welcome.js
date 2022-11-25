@@ -1,5 +1,5 @@
 const {Message, Client, SlashCommandBuilder, PermissionFlagsBits} = require("discord.js");
-const welcomeSchema = require("../../Models/Welcome");
+const welcomeSchema = require("../../schemas/Welcome");
 const { model, Schema } = require("mongoose");
 
 module.exports = {

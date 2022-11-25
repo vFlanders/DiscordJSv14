@@ -20,8 +20,8 @@ module.exports = {
       }
     } else if (interaction.isButton()) {
       const { customId } = interaction;
-      if (customId == "apina") {
-        const role = interaction.guild.roles.cache.get("888438262765613077");
+      if (customId == "verify") {
+        const role = interaction.guild.roles.cache.get("888430932409868418");
         return interaction.member.roles
           .add(role)
           .then((member) =>
@@ -32,6 +32,7 @@ module.exports = {
           );
       }
     } else if (interaction.isSelectMenu()) {
+      if (customId == "reaction-roles") {
       const { customId } = interaction;
       const { selectMenus } = client;
       const menu = selectMenus.get(customId);
@@ -42,6 +43,7 @@ module.exports = {
       } catch (error) {
         console.error(error);
       }
+    }
     } else if (interaction.isContextMenuCommand()) {
       const { commands } = client;
       const { commandName } = interaction;
