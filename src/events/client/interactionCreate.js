@@ -32,8 +32,8 @@ module.exports = {
           );
       }
     } else if (interaction.isSelectMenu()) {
-      if (customId == "reaction-roles") {
       const { customId } = interaction;
+      if (customId == "reaction-roles") {
       const { selectMenus } = client;
       const menu = selectMenus.get(customId);
       if (!menu) return new Error("No code for this menu");
