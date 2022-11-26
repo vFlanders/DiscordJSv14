@@ -15,7 +15,7 @@ module.exports = {
         const verifyEmbed = new EmbedBuilder()
         .setTitle("Verification")
         .setDescription('Click the button to verify your account and get access to the channels.')
-        .setColor(0x5fb041)
+        .setColor(0x390099)
         let sendChannel = channel.send({
             embeds: ([verifyEmbed]),
             components: [

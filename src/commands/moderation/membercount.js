@@ -26,7 +26,7 @@ const {
             value: `${interaction.guild.members.cache.filter(member => member.user.bot).size}`,
           },
         ])
-        .setColor("Blue")
+        .setColor(0x390099)
         .setThumbnail(client.user.displayAvatarURL())
         .setFooter({
           text: `${interaction.guild.name}`,

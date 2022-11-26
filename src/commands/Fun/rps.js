@@ -17,7 +17,7 @@ module.exports = {
         console.log(`The bot choosed ${botchoice}`)
 
         const Embed = new EmbedBuilder()
-            .setColor("DarkOrange")
+            .setColor(0x390099)
             .setAuthor({ name: "Rock Paper Scissor", iconURL: user.displayAvatarURL() })
             .setDescription(`<@${user.id}> choose your move`)
 
@@ -63,7 +63,7 @@ module.exports = {
                         return interaction.editReply({
                             embeds: [
                                 new EmbedBuilder()
-                                    .setColor(`DarkOrange`)
+                                    .setColor(0x390099) 
                                     .setAuthor({ name: "Rock Paper Scissor", iconURL: user.displayAvatarURL() })
                                     .setDescription(`\`\`\`Game tied\`\`\``)
                                     .addFields(
@@ -80,7 +80,7 @@ module.exports = {
                         return interaction.editReply({
                             embeds: [
                                 new EmbedBuilder()
-                                    .setColor(`DarkOrange`)
+                                    .setColor(0x390099)
                                     .setAuthor({ name: "Rock Paper Scissor", iconURL: user.displayAvatarURL() })
                                     .setDescription(`\`\`\`You lost the game\`\`\``)
                                     .addFields(
@@ -96,7 +96,7 @@ module.exports = {
                         return interaction.editReply({
                             embeds: [
                                 new EmbedBuilder()
-                                    .setColor(`DarkOrange`)
+                                    .setColor(0x390099)
                                     .setAuthor({ name: "Rock Paper Scissor", iconURL: user.displayAvatarURL() })
                                     .setDescription(`\`\`\`You won the game\`\`\``)
                                     .addFields(
@@ -115,7 +115,7 @@ module.exports = {
                         return interaction.editReply({
                             embeds: [
                                 new EmbedBuilder()
-                                    .setColor(`DarkOrange`)
+                                    .setColor(0x390099)
                                     .setAuthor({ name: "Rock Paper Scissor", iconURL: user.displayAvatarURL() })
                                     .setDescription(`\`\`\`You won the game\`\`\``)
                                     .addFields(
@@ -132,7 +132,7 @@ module.exports = {
                         return interaction.editReply({
                             embeds: [
                                 new EmbedBuilder()
-                                    .setColor(`DarkOrange`)
+                                    .setColor(0x390099)
                                     .setAuthor({ name: "Rock Paper Scissor", iconURL: user.displayAvatarURL() })
                                     .setDescription(`\`\`\`Game tied\`\`\``)
                                     .addFields(
@@ -148,7 +148,7 @@ module.exports = {
                         return interaction.editReply({
                             embeds: [
                                 new EmbedBuilder()
-                                    .setColor(`DarkOrange`)
+                                    .setColor(0x390099)
                                     .setAuthor({ name: "Rock Paper Scissor", iconURL: user.displayAvatarURL() })
                                     .setDescription(`\`\`\`You lost the game\`\`\``)
                                     .addFields(
@@ -169,7 +169,7 @@ module.exports = {
                         return interaction.editReply({
                             embeds: [
                                 new EmbedBuilder()
-                                    .setColor(`DarkOrange`)
+                                    .setColor(0x390099)
                                     .setAuthor({ name: "Rock Paper Scissor", iconURL: user.displayAvatarURL() })
                                     .setDescription(`\`\`\`You lost the game\`\`\``)
                                     .addFields(
@@ -186,7 +186,7 @@ module.exports = {
                         return interaction.editReply({
                             embeds: [
                                 new EmbedBuilder()
-                                    .setColor(`DarkOrange`)
+                                    .setColor(0x390099)
                                     .setAuthor({ name: "Rock Paper Scissor", iconURL: user.displayAvatarURL() })
                                     .setDescription(`\`\`\`You won the game\`\`\``)
                                     .addFields(
@@ -202,7 +202,7 @@ module.exports = {
                         return interaction.editReply({
                             embeds: [
                                 new EmbedBuilder()
-                                    .setColor(`DarkOrange`)
+                                    .setColor(0x390099)
                                     .setAuthor({ name: "Rock Paper Scissor", iconURL: user.displayAvatarURL() })
                                     .setDescription(`\`\`\`Game tied\`\`\``)
                                     .addFields(

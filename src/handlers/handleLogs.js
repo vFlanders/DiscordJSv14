@@ -1,7 +1,7 @@
 const { EmbedBuilder } = require("discord.js");
 
 function handleLogs(client) {
-    const logSchema = require("../Models/Logs");
+    const logSchema = require("../schemas/Logs");
 
     function send_log(guildId, embed) {
         logSchema.findOne({ Guild: guildId }, async (err, data) => {

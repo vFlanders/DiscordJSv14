@@ -4,7 +4,7 @@ const {
   EmbedBuilder,
   ChannelType,
 } = require("discord.js");
-const logSchema = require("../../Models/Logs");
+const logSchema = require("../../schemas/Logs");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -33,7 +33,7 @@ module.exports = {
 
         embed
           .setDescription("Data was successfully sent to the database")
-          .setColor("Green")
+          .setColor(0x390099)
           .setTimestamp();
       } else if (data) {
         logSchema.findOneAndDelete({ Guild: guildId });
@@ -44,14 +44,14 @@ module.exports = {
 
         embed
           .setDescription("Data was successfully replaced with the new data")
-          .setColor("Green")
+          .setColor(0x390099)
           .setTimestamp();
       }
 
       if (err) {
         embed
           .setDescription("Something went wrong....")
-          .setColor("Red")
+          .setColor(0x390099)
           .setTimestamp();
       }
 

@@ -164,7 +164,7 @@ module.exports = {
     } catch (err) {
       console.log(err);
       const errEmbed = new EmbedBuilder()
-        .setColor("Red")
+        .setColor(0x390099)
         .setDescription("Something went wrong....");
 
         return interaction.reply({embeds: [errEmbed], ephemeral: true});

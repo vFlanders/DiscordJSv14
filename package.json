@@ -10,11 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/rest": "^1.0.0",
+    "@napi-rs/canvas": "^0.1.30",
     "chalk": "^4.1.2",
     "discord-api-types": "^0.36.2",
     "discord-html-transcripts": "^3.1.2",
     "discord-logs": "^2.2.1",
     "discord.js": "^14.0.1",
+    "discord.js-leveling": "^5.4.0",
     "dotenv": "^16.0.3",
     "fs": "^0.0.1-security",
     "git": "^0.1.5",

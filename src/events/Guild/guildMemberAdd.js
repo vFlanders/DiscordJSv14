@@ -14,6 +14,9 @@ module.exports = {
             const {user, guild} = member;
             const welcomeChannel = member.guild.channels.cache.get(data.Channel);
 
+            const memberCountChannel = guild.channels.cache.get("1046071853019566111");
+            memberCountChannel.setName(`Members: ${guild.memberCount}`);
+
             const welcomeEmbed = new EmbedBuilder()
             .setTitle("**New member!**")
             .setDescription(data.Msg)

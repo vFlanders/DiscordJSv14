@@ -17,7 +17,7 @@ module.exports = {
 
             const panelEmbed = new EmbedBuilder()
                 .setDescription("Please select a role below")
-                .setColor("Aqua")
+                .setColor(0x390099)
 
             const options = data.roles.map(x => {
                 const role = guild.roles.cache.get(x.roleId);

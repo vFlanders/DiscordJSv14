@@ -24,7 +24,7 @@ module.exports = {
 
         const embed = new EmbedBuilder()
             .setTitle("**------ Poll ------**")
-            .setColor(0x0100360)
+            .setColor(0x390099)
             .setDescription(description)
             .setTimestamp();
 

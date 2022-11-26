@@ -22,7 +22,7 @@ module.exports = {
             .setTitle(title)
             .setImage(url)
             .setURL(url)
-            .setColor("Random")
+            .setColor(0x390099)
             .setFooter({
                 text: author
             });

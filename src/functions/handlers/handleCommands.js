@@ -1,4 +1,5 @@
 const { REST } = require("@discordjs/rest");
+const { table } = require("console");
 const { Routes } = require("discord-api-types/v9");
 const fs = require("fs");
 
@@ -12,10 +13,10 @@ module.exports = (client) => {
 
       const { commands, commandArray } = client;
       for (const file of commandFiles) {
-        const command = require(`../../commands/${folder}/${file}`);
-        const properties = {folder, ...command};
-        commands.set(command.data.name, command, properties);
-        commandArray.push(command.data.toJSON());
+        const commandFile = require(`../../commands/${folder}/${file}`);
+        const properties = {folder, ...commandFile };
+        commands.set(commandFile.data.name, properties);
+        commandArray.push(commandFile.data.toJSON());
       }
     }
 
@@ -30,7 +31,7 @@ module.exports = (client) => {
         body: client.commandArray,
       });
 
-      console.log("Succesfully reloaded application (/) commands. ");
+      console.log("Successfully reloaded application (/) commands. ");
     } catch (error) {
       console.error(error);
     }
