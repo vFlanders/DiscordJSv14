@@ -11,19 +11,22 @@ const {
       .setDefaultMemberPermissions(PermissionFlagsBits.SendMessages),
     async execute(interaction, client) {
       const embed = new EmbedBuilder()
-        .setTitle(`${interaction.guild.name}`)
+        .setTitle("MEMBERCOUNT")
         .setFields([
           {
-            name: "Total Members",
+            name: "📋 ⋮ Total",
             value: `${interaction.guild.memberCount}`,
+            inline: true,
           },
           {
-            name: "Humans",
+            name: "🧒 ⋮ Humans",
             value: `${interaction.guild.members.cache.filter(member => !member.user.bot).size}`,
+            inline: true,
           },
           {
-            name: "Robots",
+            name: "🤖 ⋮ Robots",
             value: `${interaction.guild.members.cache.filter(member => member.user.bot).size}`,
+            inline: true,
           },
         ])
         .setColor(0x390099)
@@ -31,7 +34,8 @@ const {
         .setFooter({
           text: `${interaction.guild.name}`,
           iconURL: `${client.user.displayAvatarURL()}`,
-        });
+        })
+        .setImage('https://i.imgur.com/0y0FObC.gif');
   
       await interaction.reply({ embeds: [embed], ephemeral: true });
     },

@@ -1,4 +1,4 @@
-const {Message, Client, SlashCommandBuilder, PermissionFlagsBits} = require("discord.js");
+const {Message, Client, SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require("discord.js");
 const welcomeSchema = require("../../schemas/Welcome");
 const { model, Schema } = require("mongoose");
 
@@ -30,9 +30,17 @@ module.exports = {
         const welcomeMessage = options.getString("welcome-message");
         const roleId = options.getRole("welcome-role");
 
+        const embed = new EmbedBuilder()
+            .setTitle("**WELCOME SETUP**")
+            .setDescription(`Welcome Channel Was Successfully Set As ${welcomeChannel}`)
+            .setColor(0x390099)
+            .setImage('https://i.imgur.com/0y0FObC.gif');
+
+
         if(!interaction.guild.members.me.permissions.has(PermissionFlagsBits.SendMessages)) {
             interaction.reply({content: "I don't have permissions for this.", ephemeral: true});
         }
+
 
         welcomeSchema.findOne({Guild: interaction.guild.id}, async (err, data) => {
             if(!data) {
@@ -43,7 +51,7 @@ module.exports = {
                     Role: roleId.id
                 });
             }
-            interaction.reply({content: 'Succesfully created a welcome message', ephemeral: true});
+            interaction.reply({embeds: [embed], ephemeral: true});
         })
     }
 }

@@ -25,7 +25,8 @@ module.exports = {
             .setColor(0x390099)
             .setFooter({
                 text: author
-            });
+            })
+            .setImage('https://i.imgur.com/0y0FObC.gif');
 
         interaction.reply({
             embeds: [embed]

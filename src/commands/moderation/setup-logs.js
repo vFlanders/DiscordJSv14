@@ -34,6 +34,7 @@ module.exports = {
         embed
           .setDescription("Data was successfully sent to the database")
           .setColor(0x390099)
+          .setImage('https://i.imgur.com/0y0FObC.gif')
           .setTimestamp();
       } else if (data) {
         logSchema.findOneAndDelete({ Guild: guildId });
@@ -45,6 +46,7 @@ module.exports = {
         embed
           .setDescription("Data was successfully replaced with the new data")
           .setColor(0x390099)
+          .setImage('https://i.imgur.com/0y0FObC.gif')
           .setTimestamp();
       }
 
@@ -52,6 +54,7 @@ module.exports = {
         embed
           .setDescription("Something went wrong....")
           .setColor(0x390099)
+          .setImage('https://i.imgur.com/0y0FObC.gif')
           .setTimestamp();
       }
 

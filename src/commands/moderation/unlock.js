@@ -1,7 +1,9 @@
 const {
     SlashCommandBuilder,
     PermissionFlagsBits,
-    PermissionsBitField
+    PermissionsBitField,
+    EmbedBuilder,
+    CommandInteraction
   } = require("discord.js");
   
   module.exports = {
@@ -10,13 +12,13 @@ const {
       .setDescription("unlocks channel")
       .addChannelOption((option) =>
         option.setName("channel").setDescription("Select a channel")
-        .setRequired(true)
+        .setRequired(false)
       )
       .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
   
     async execute(interaction, client) {
-      const channel = interaction.options.getChannel("channel");
-  
+      
+      const channel = interaction.options.getChannel("channel") || interaction.channel;
   
       await channel.permissionOverwrites.edit(interaction.guild.roles.everyone, {
         SendMessages: true,
@@ -30,9 +32,15 @@ const {
           AttachFiles: true,
         }
       );
+
+      const embed = new EmbedBuilder()
+        .setTitle("**CHANNEL UNLOCKED**")
+        .setDescription(`:unlock: ${channel} Was Successfully Unlocked!`)
+        .setColor(0x390099)
+        .setImage('https://i.imgur.com/0y0FObC.gif')
   
       await interaction.reply({
-        content: `:unlock: ${channel} Was Succesfully Unlocked!`, 
+        embeds: [embed],
         ephemeral: true
       });
     },

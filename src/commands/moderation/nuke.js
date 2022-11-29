@@ -21,7 +21,8 @@ module.exports = {
         new EmbedBuilder()
           .setTitle("🤯 Nuke Channel")
           .setDescription(`Are you sure you want to nuke ${channel}?`)
-          .setColor(0x390099),
+          .setColor(0x390099)
+          .setImage('https://i.imgur.com/0y0FObC.gif'),
       ],
       components: [
         new ActionRowBuilder().addComponents(
@@ -38,6 +39,7 @@ module.exports = {
         ),
       ],
       fetchReply: true,
+      ephemeral: true,
     });
 
     const collector = message.createMessageComponentCollector({
@@ -60,8 +62,10 @@ module.exports = {
                 .setDescription(
                   `${channel.name} has been nuked by ${interaction.user}`
                 )
-                .setColor(0x390099),
+                .setColor(0x390099)
+                .setImage('https://i.imgur.com/0y0FObC.gif'),
             ],
+            ephemeral: true,
           });
           if (channel.id !== interaction.channelId) {
             interaction.editReply({
@@ -69,9 +73,11 @@ module.exports = {
                 new EmbedBuilder()
                   .setTitle("🗑️ Nuke Channel")
                   .setDescription(`${channel.name} has been nuked correctly`)
-                  .setColor(0x390099),
+                  .setColor(0x390099)
+                  .setImage('https://i.imgur.com/0y0FObC.gif'),
               ],
               components: [],
+              ephemeral: true,
             });
           }
         });
@@ -81,9 +87,11 @@ module.exports = {
             new EmbedBuilder()
               .setTitle("🗑️ Nuke Channel")
               .setDescription(`${channel} has not been nuked`)
-              .setColor(0x390099),
+              .setColor(0x390099)
+              .setImage('https://i.imgur.com/0y0FObC.gif'),
           ],
           components: [],
+          ephemeral: true,
         });
       }
     });

@@ -1,0 +1,5 @@
+token=MTA0NDg4MzI5MTcyMDkxMjk2Nw.GAbN_u.hcTqJN38R_mwb7UzOmEZkJhTamJ3gBahqVnsMA
+mongodb=mongodb+srv://Flanders:Kartinx12@bot2.fbkp3wo.mongodb.net/?retryWrites=true&w=majority
+ticketParent=1042103140482297887
+openticket=1042103158207414341
+transcripts=1042103178549805136

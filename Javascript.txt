@@ -1,0 +1,10 @@
+const a = 3;
+const b = 2;
+
+console.log(a > 0 && b > 0);
+// expected output: true
+
+Tarkoittaa että a on isompi kuin 0 JA b on isompi kuin 0 jolloin on true
+Jos b = -2 olisi se false koska molemmat puolet ei pidä paikkaansa.
+
+== on merkki

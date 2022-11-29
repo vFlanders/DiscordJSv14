@@ -58,7 +58,7 @@ module.exports = {
                 });
             }
 
-            return interaction.reply({ content: `Created new role **${role.name}**` });
+            return interaction.reply({ content: `Added role **${role.name}**`, ephemeral: true });
 
         } catch (err) {
             console.log(err);

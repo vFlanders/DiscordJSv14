@@ -13,26 +13,29 @@ module.exports = {
         .addChannelOption(option =>
             option.setName("channel")
                 .setDescription("Where do you want to send the poll to?")
-                .setRequired(true)
                 .addChannelTypes(ChannelType.GuildText)
         ),
     async execute(interaction) {
-        const { options } = interaction;
+        const { options, message } = interaction;
 
-        const channel = options.getChannel("channel");
+        const channel = options.getChannel("channel") || interaction.channel;
         const description = options.getString("description");
 
+        const plusone = interaction.guild.emojis.cache.find(emoji => emoji.name === 'plusone');
+        const minusone = interaction.guild.emojis.cache.find(emoji => emoji.name === 'minusone');
+
         const embed = new EmbedBuilder()
-            .setTitle("**------ Poll ------**")
+            .setTitle("**❓ POLL ❓**")
             .setColor(0x390099)
             .setDescription(description)
+            .setImage('https://i.imgur.com/0y0FObC.gif')
             .setTimestamp();
 
         try {
             const m = await channel.send({ embeds: [embed] });
-            await m.react("🔼");
-            await m.react("🔽");
-            await interaction.reply({ content: "✅: Poll was succesfully sent to the channel.", ephemeral: true });
+            await m.react(plusone);
+            await m.react(minusone);
+            await interaction.reply({ content: "Poll was successfully sent to the channel.", ephemeral: true });
         } catch (err) {
             console.log(err);
         }

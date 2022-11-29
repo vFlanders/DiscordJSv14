@@ -16,8 +16,10 @@ module.exports = {
                 return interaction.reply({ content: "This server does not have any data.", ephemeral: true });
 
             const panelEmbed = new EmbedBuilder()
+                .setTitle("**REACTION ROLES**")
                 .setDescription("Please select a role below")
                 .setColor(0x390099)
+                .setImage('https://i.imgur.com/0y0FObC.gif')
 
             const options = data.roles.map(x => {
                 const role = guild.roles.cache.get(x.roleId);

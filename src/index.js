@@ -19,6 +19,7 @@ client.buttons = new Collection();
 client.selectMenus = new Collection();
 client.commandArray = [];
 
+
 const functionFolders = fs.readdirSync(`./src/functions`);
 for (const folder of functionFolders) {
     const functionFiles = fs
@@ -31,11 +32,9 @@ logs(client, {
     debug: true
 });
 
-
 client.handleEvents();
 handleLogs(client);
 client.handleCommands();
-client.handleComponents();
 client.login(token);
 (async () => {
     await connect(mongodb).catch(console.error);

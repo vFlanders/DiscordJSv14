@@ -7,6 +7,21 @@ module.exports = {
     async execute(message) {
         if (!message.guild || message.author.bot) return;
 
+        // BLACKLISTED WORD SYSTEM
+        let words = ["homo", "nigga"];
+
+        let foundInText = false;
+
+        for (let i in words) {
+            if (message.content.toLowerCase().includes(words[i].toLowerCase())) foundInText = true;
+        }
+        
+        if (foundInText) {
+            message.delete();
+            message.channel.send(`${message.author}, You cannot send that kind of words`)
+        }
+        // XP SYSTEM
+
         if (message.content.length < 3) return;
 
         const randomAmountOfXp = Math.floor(Math.random() * 29) + 1;

@@ -10,7 +10,7 @@ module.exports = {
 
         
 
-        client.user.setActivity("over NG", { type: ActivityType.Watching });
+        client.user.setActivity("/help", { type: ActivityType.Playing });
         client.user.setStatus("dnd");
         console.log(`${client.user.tag} has logged in`);
 

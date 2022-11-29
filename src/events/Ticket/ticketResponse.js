@@ -31,9 +31,9 @@ module.exports = {
 
     if (!guild.members.me.permissions.has(ManageChannels))
       interaction.reply({
-        content: "You dont have permission for this",
+        content: "You don't have permission for this",
         ephemeral: true,
-      });
+    });
 
     try {
       await guild.channels.create({

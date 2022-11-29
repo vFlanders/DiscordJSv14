@@ -25,7 +25,7 @@ module.exports = {
       fun: "🥳",
       moderation: "🛠️",
       general: "⚙️",
-      level: "1️⃣",
+      economy: "🪙",
     };
     const { user } = interaction;
     const directories = [
@@ -60,28 +60,28 @@ module.exports = {
     .setDescription(`
     Hey there ${interaction.user}!
 
-    </> is bot with lot of cool features!
+    ${client.user} is bot with lot of cool features!
 
     **My command categories :**
 
-    > <:gear:1046007102096818176> **General**
-    > <:tools:1046006785481379880> **Moderation**
-    > <:partying_face:1046006982080995381> **Fun**
-    > <:tickets:1046008817147727933> **Ticket**
-    > <:one:1046037045379862559> **Level**
+    <:gear:1046007102096818176> **General**
+    <:tools:1046006785481379880> **Moderation**
+    <:tickets:1046008817147727933> **Ticket**
+    <:coin:1047226142064648292> **Economy**
 
-    Choose a category below for General, Moderation and Fun commands
+    Choose a category below for General, Moderation, Economy and Ticket commands
 
     
     `)
     // .setAuthor({name:`${user.tag}`, iconURL: `${user.avatarURL({dynamic: true, size: 512})}`})
     .setFooter({ text: '</>#2217', iconURL: 'https://i.imgur.com/Hwbz1Cg.png'})
+    .setImage('https://i.imgur.com/0y0FObC.gif');
 
     const components = (state) => [
       new ActionRowBuilder().addComponents(
         new SelectMenuBuilder()
           .setCustomId("help-menu")
-          .setPlaceholder("🚫| Nothing selected.")
+          .setPlaceholder("Nothing selected.")
           .setDisabled(state)
           .addOptions(
             categories.map((cmd) => {
@@ -117,17 +117,18 @@ module.exports = {
       );
       
       const mappedCommands = category.commands.map((cmd) => {
-            return `\`${cmd.name}\``
+            return `**${cmd.name}**`
           }
         );
         
-      const stringedCommands = mappedCommands.join(`, \n`);
+      const stringedCommands = mappedCommands.join(` , \n`);
 
       const categoryEmbed = new EmbedBuilder()
         .setTitle(`${formatString(directory)} commands`)
         .setDescription(stringedCommands)
         .setThumbnail('https://i.imgur.com/Hwbz1Cg.png')
-        .setColor(0x390099);
+        .setColor(0x390099)
+        .setImage('https://i.imgur.com/0y0FObC.gif');
 
       interaction.update({ embeds: [categoryEmbed] });
     });

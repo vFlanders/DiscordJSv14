@@ -17,10 +17,11 @@ module.exports = (client) => {
         const properties = {folder, ...commandFile };
         commands.set(commandFile.data.name, properties);
         commandArray.push(commandFile.data.toJSON());
+
       }
     }
 
-    const clientId = "1038023167408611389";
+    const clientId = "1044883291720912967";
     const guildId = "888077778396778627";
     const rest = new REST({ version: "9" }).setToken(process.env.token);
 

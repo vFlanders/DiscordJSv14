@@ -10,16 +10,19 @@ module.exports = {
      */
     async execute(interaction) {
         const target = await interaction.guild.members.fetch(interaction.targetId);
-
+ 
         const Response = new EmbedBuilder()
-            .setColor(0x00ff00)
-            .setAuthor(target.user.id, target.user.avatarURL({dynamic: true, size: 512}))
-            .setThumbnail(target.user.avatarURL({dynamic: true, size: 512}))
-            .addField({ text: `ID ${target.user.id}`})
-            .addField({ text: `Roles${target.roles.cache.map(r => r).join(" ").replace("@everyone", " ") || "None"}`})
-            .addField({ text: `Member since <t:${parseInt(target.joinedTimestamp / 1000)}:R>`})
-            .addField({ text: `Discord user since <t:${parseInt(target.user.createdTimestamp / 1000)}:R>`})
-
-            interaction.reply({embeds: [Response], ephemeral: true})
+            .setColor(0x390099)
+            .setAuthor({ name: `${target.user.tag}`})
+            .setThumbnail(target.user.avatarURL())
+            .addFields(
+                { name: '**Roles:**', value: `${target.roles.cache.map(r => r).join(" ").replace("@everyone", " ") || "None"}` },
+                { name: '**Member Since: **', value: `<t:${parseInt(target.joinedTimestamp / 1000)}:R>` },
+                { name: '**Discord User Since: **', value: `<t:${parseInt(target.user.createdTimestamp / 1000)}:R>` },
+                { name: '**Discord ID: **', value:  `${target.user.id}`}
+            )
+            .setTimestamp()
+            .setImage('https://i.imgur.com/0y0FObC.gif')
+            interaction.reply({embeds: [Response]})
     }
 }

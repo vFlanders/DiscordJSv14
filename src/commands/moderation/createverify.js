@@ -16,6 +16,7 @@ module.exports = {
         .setTitle("Verification")
         .setDescription('Click the button to verify your account and get access to the channels.')
         .setColor(0x390099)
+        .setImage('https://i.imgur.com/0y0FObC.gif')
         let sendChannel = channel.send({
             embeds: ([verifyEmbed]),
             components: [
@@ -27,7 +28,7 @@ module.exports = {
         if (!sendChannel) {
             return interaction.reply({content: 'There was an error! Try again later.', ephemeral: true});
         } else {
-            return interaction.reply({content: 'Verification channel was succesfully set!', ephemeral: true});
+            return interaction.reply({content: 'Verification channel was successfully set!', ephemeral: true});
         }
     },
 };
